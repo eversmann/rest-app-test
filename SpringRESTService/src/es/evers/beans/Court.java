@@ -9,9 +9,10 @@ public class Court {
 	};
 
 	public enum SITUATION {
-		INDOOR, OPEN_AIR
+		INDOOR, OUTDOOR
 	};
 
+	private String id;
 	private Long number;
 	private SURFACE surface;
 	private SITUATION situation;
@@ -23,10 +24,6 @@ public class Court {
 
 	public void setOwnerId(Long pOwnerId) {
 		ownerId = pOwnerId;
-	}
-
-	public Court() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public Long getNumber() {
@@ -56,6 +53,14 @@ public class Court {
 	@Override
 	public String toString() {
 		return ToStringBuilder.reflectionToString(this);
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String pId) {
+		id = pId;
 	}
 
 }

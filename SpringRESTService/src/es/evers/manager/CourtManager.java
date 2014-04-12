@@ -7,5 +7,7 @@ import es.evers.beans.Court;
 public interface CourtManager {
 
 	public abstract List<Court> retrieveCourtsByOwnerId(Long pOwnerId);
+	
+	public abstract void addCourt(Court court);
 
 }

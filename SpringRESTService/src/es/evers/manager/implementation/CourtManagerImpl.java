@@ -19,12 +19,25 @@ public class CourtManagerImpl implements CourtManager {
 	 * (non-Javadoc)
 	 * 
 	 * @see
-	 * es.evers.services.manager.implementation.CourtManager#retrieveCourtsByOwnerId()
+	 * es.evers.services.manager.implementation.CourtManager#retrieveCourtsByOwnerId
+	 * ()
 	 */
 	@Override
 	public List<Court> retrieveCourtsByOwnerId(Long ownerId) {
 		Query query = new Query(Criteria.where("ownerId").is(ownerId));
 		return getMongoTemplate().find(query, Court.class);
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * es.evers.services.manager.implementation.CourtManager#addCourt
+	 * ()
+	 */
+	@Override
+	public void addCourt(Court pCourt) {
+		getMongoTemplate().save(pCourt);
 	}
 
 	public MongoOperations getMongoTemplate() {
@@ -34,5 +47,4 @@ public class CourtManagerImpl implements CourtManager {
 	public void setMongoTemplate(MongoOperations pMongoTemplate) {
 		mongoTemplate = pMongoTemplate;
 	}
-
 }
