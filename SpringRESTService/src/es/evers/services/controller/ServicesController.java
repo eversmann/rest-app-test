@@ -4,14 +4,15 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import es.evers.services.beans.Court;
-import es.evers.services.beans.Greeting;
-import es.evers.services.manager.implementation.CourtManager;
+import es.evers.beans.Court;
+import es.evers.beans.Greeting;
+import es.evers.manager.CourtManager;
 
 @RestController
 @RequestMapping("/services/*")
@@ -30,9 +31,9 @@ public class ServicesController {
 				name));
 	}
 
-	@RequestMapping(value = "/list", method = RequestMethod.GET)
-	public List<Court> getList() {
-		return getCourtManager().retrieveCourts();
+	@RequestMapping(value = "/listCourts/{owner}", method = RequestMethod.GET)
+	public List<Court> getList(@PathVariable("owner") Long pOwnerId) {
+		return getCourtManager().retrieveCourtsByOwnerId(pOwnerId);
 	}
 
 	public CourtManager getCourtManager() {

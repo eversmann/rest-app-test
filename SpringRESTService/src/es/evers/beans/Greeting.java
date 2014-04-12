@@ -1,4 +1,4 @@
-package es.evers.services.beans;
+package es.evers.beans;
 
 public class Greeting {
 

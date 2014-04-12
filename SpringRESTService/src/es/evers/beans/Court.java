@@ -1,4 +1,6 @@
-package es.evers.services.beans;
+package es.evers.beans;
+
+import org.apache.commons.lang.builder.ToStringBuilder;
 
 public class Court {
 
@@ -13,6 +15,15 @@ public class Court {
 	private Long number;
 	private SURFACE surface;
 	private SITUATION situation;
+	private Long ownerId;
+
+	public Long getOwnerId() {
+		return ownerId;
+	}
+
+	public void setOwnerId(Long pOwnerId) {
+		ownerId = pOwnerId;
+	}
 
 	public Court() {
 		// TODO Auto-generated constructor stub
@@ -40,6 +51,11 @@ public class Court {
 
 	public void setSituation(SITUATION pSituation) {
 		situation = pSituation;
+	}
+
+	@Override
+	public String toString() {
+		return ToStringBuilder.reflectionToString(this);
 	}
 
 }
