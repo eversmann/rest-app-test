@@ -1,8 +1,6 @@
 package es.evers.beans;
 
-import org.apache.commons.lang.builder.ToStringBuilder;
-
-public class Court {
+public class Court extends BeanTemplate {
 
 	public enum SURFACE {
 		HARD, SOFT
@@ -48,11 +46,6 @@ public class Court {
 
 	public void setSituation(SITUATION pSituation) {
 		situation = pSituation;
-	}
-
-	@Override
-	public String toString() {
-		return ToStringBuilder.reflectionToString(this);
 	}
 
 	public String getId() {

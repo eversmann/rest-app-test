@@ -31,9 +31,7 @@ public class CourtManagerImpl implements CourtManager {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see
-	 * es.evers.services.manager.implementation.CourtManager#addCourt
-	 * ()
+	 * @see es.evers.services.manager.implementation.CourtManager#addCourt ()
 	 */
 	@Override
 	public void addCourt(Court pCourt) {
@@ -47,4 +45,5 @@ public class CourtManagerImpl implements CourtManager {
 	public void setMongoTemplate(MongoOperations pMongoTemplate) {
 		mongoTemplate = pMongoTemplate;
 	}
+
 }

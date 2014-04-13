@@ -16,12 +16,11 @@
 
 	<!-- Default bean name is 'mongo' -->
 	<mongo:mongo host="${mongo.host}" port="${mongo.port}" />
-	<mongo:db-factory dbname="courtsdb" mongo-ref="mongo" />
+	<!-- <mongo:db-factory dbname="courtsdb" mongo-ref="mongo" /> -->
 
 	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
 		<constructor-arg ref="mongo" />
 		<constructor-arg name="databaseName" value="courtsdb" />
-		<property name="writeResultChecking" value="LOG"/>
+		<property name="writeResultChecking" value="LOG" />
 	</bean>
-
 </beans>

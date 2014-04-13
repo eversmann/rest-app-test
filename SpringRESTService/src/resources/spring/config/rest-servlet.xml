@@ -21,6 +21,7 @@
 	<!-- <jpa:repositories base-package="es.evers.repositories" /> -->
 
 	<bean id="courtManager" class="es.evers.manager.implementation.CourtManagerImpl" />
+	<bean id="companyManager" class="es.evers.manager.implementation.CompanyManagerImpl" />
 
 
 
